@@ -1,0 +1,19 @@
+---
+driver:
+  name: docker
+  use_sudo: false
+
+platforms:
+  - name: ubuntu-14.04
+
+transport:
+  name: sftp
+
+provisioner:
+  name: salt_solo
+  salt_install: bootstrap
+  salt_bootstrap_options: "-X"
+  is_file_root: true
+
+suites:
+  - name: configuration
